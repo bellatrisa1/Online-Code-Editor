@@ -12,7 +12,7 @@ const App = () => {
         const capturedLogs = [];
         const originalLog = console.log;
 
-        // Перехват console.log
+     
         console.log = (...args) => {
           capturedLogs.push(args.join(" "));
           originalLog(...args); // Для отладки в консоли браузера
@@ -21,7 +21,7 @@ const App = () => {
         // Выполнение кода
         eval(code);
 
-        console.log = originalLog; // Восстановить оригинальный console.log
+        console.log = originalLog; 
 
         setOutput(capturedLogs.join("\n") || "Executed successfully!");
       } catch (error) {
